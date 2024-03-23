@@ -1,0 +1,19 @@
+[
+    {
+     "name": "ping",
+     "author": "willi",
+     "link": "https://github.com/wihal",
+     "icon": "",
+     "lang": "en",
+     "license": "MIT",
+     "nsfw": "false",
+     "tags": [
+         "@everyone", "testing"
+     ],
+     "file": "ping.js",
+     "version": "v0.0.3",
+     "description": "Ping command for testing."
+    }
+]
+      
+   
