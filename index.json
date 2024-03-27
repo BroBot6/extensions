@@ -8,7 +8,9 @@
     "nsfw": "false",
     "tags": ["@everyone", "testing"],
     "folder": "ping",
-    "files": { "ping.js": "command" },
+    "files": {
+        "command": "ping.js"
+      },
     "version": "v0.0.1",
     "description": "Ping command for testing."
   },
@@ -22,9 +24,9 @@
     "tags": ["", ""],
     "folder": "tempvoice",
     "files": {
-      "Tempvoice.js": "command",
-      "TempvoiceEvents.js": "event",
-      "TempvoiceConfig.json": "config"
+      "command": "tempvoice.js",
+      "event": "tempvoice.js",
+      "config": "tempvoicedata.json"
     },
     "version": "v0.0.1",
     "description": "Ping command for testing."
@@ -38,7 +40,9 @@
     "nsfw": "false",
     "tags": ["", ""],
     "folder": "clear",
-    "files": { "clear.js": "command" },
+    "files": {
+        "command": "clear.js"
+      },
     "version": "v0.0.1",
     "description": "Ping command for testing."
   }
