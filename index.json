@@ -1,19 +1,45 @@
-[
-    {
-     "name": "ping",
-     "author": "willi",
-     "link": "https://github.com/wihal",
-     "icon": "",
-     "lang": "en",
-     "license": "MIT",
-     "nsfw": "false",
-     "tags": [
-         "@everyone", "testing"
-     ],
-     "file": "ping.js",
-     "version": "v0.0.3",
-     "description": "Ping command for testing."
-    }
-]
-      
-   
+{
+  "ping": {
+    "name": "ping",
+    "author": "wihal",
+    "author_link": "https://github.com/wihal",
+    "icon": "",
+    "lang": "en",
+    "nsfw": "false",
+    "tags": ["@everyone", "testing"],
+    "folder": "ping",
+    "files": { "ping.js": "command" },
+    "version": "v0.0.1",
+    "description": "Ping command for testing."
+  },
+  "tempvoice": {
+    "name": "tempvoice",
+    "author": "wihal",
+    "author_link": "https://github.com/wihal",
+    "icon": "",
+    "lang": "en",
+    "nsfw": "false",
+    "tags": ["", ""],
+    "folder": "tempvoice",
+    "files": {
+      "Tempvoice.js": "command",
+      "TempvoiceEvents.js": "event",
+      "TempvoiceConfig.json": "config"
+    },
+    "version": "v0.0.1",
+    "description": "Ping command for testing."
+  },
+  "clear": {
+    "name": "clear",
+    "author": "wihal",
+    "author_link": "https://github.com/wihal",
+    "icon": "",
+    "lang": "en",
+    "nsfw": "false",
+    "tags": ["", ""],
+    "folder": "clear",
+    "files": { "clear.js": "command" },
+    "version": "v0.0.1",
+    "description": "Ping command for testing."
+  }
+}
