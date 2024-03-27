@@ -9,7 +9,7 @@
     "tags": ["@everyone", "testing"],
     "folder": "ping",
     "files": {
-        "command": "ping.js"
+        "commands": ["ping.js"]
       },
     "version": "v0.0.1",
     "description": "Ping command for testing."
@@ -24,9 +24,9 @@
     "tags": ["", ""],
     "folder": "tempvoice",
     "files": {
-      "command": "tempvoice.js",
-      "event": "tempvoice.js",
-      "config": "tempvoicedata.json"
+      "commands": ["tempvoice.js"],
+      "events": ["tempvoice.js"],
+      "configs": ["tempvoicedata.json"]
     },
     "version": "v0.0.1",
     "description": "Ping command for testing."
@@ -41,7 +41,7 @@
     "tags": ["", ""],
     "folder": "clear",
     "files": {
-        "command": "clear.js"
+        "commands": ["clear.js"]
       },
     "version": "v0.0.1",
     "description": "Ping command for testing."
