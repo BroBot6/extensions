@@ -9,24 +9,7 @@
     "tags": ["@everyone", "testing"],
     "folder": "ping",
     "files": {
-        "commands": ["ping.js"]
-      },
-    "version": "v0.0.1",
-    "description": "Ping command for testing."
-  },
-  "tempvoice": {
-    "name": "tempvoice",
-    "author": "wihal",
-    "author_link": "https://github.com/wihal",
-    "icon": "",
-    "lang": "en",
-    "nsfw": "false",
-    "tags": ["", ""],
-    "folder": "tempvoice",
-    "files": {
-      "commands": ["tempvoice.js"],
-      "events": ["tempvoice.js"],
-      "configs": ["tempvoicedata.json"]
+      "commands": ["ping.js"]
     },
     "version": "v0.0.1",
     "description": "Ping command for testing."
@@ -41,9 +24,25 @@
     "tags": ["", ""],
     "folder": "clear",
     "files": {
-        "commands": ["clear.js"]
-      },
+      "commands": ["clear.js"]
+    },
     "version": "v0.0.1",
     "description": "Ping command for testing."
+  },
+  "counting": {
+    "name": "counting",
+    "author": "wihal",
+    "author_link": "https://github.com/wihal",
+    "icon": "",
+    "lang": "en",
+    "nsfw": "false",
+    "tags": ["counting"],
+    "folder": "counting",
+    "files": {
+      "events": ["countingEvent.js"],
+      "configs": ["countingData.json"]
+    },
+    "version": "v0.0.1",
+    "description": "Counting game"
   }
 }
