@@ -39,8 +39,8 @@
     "tags": ["counting"],
     "folder": "counting",
     "files": {
-      "events": ["countingEvent.js"],
-      "configs": ["countingData.json"]
+      "events": ["index.js"],
+      "configs": ["data.json"]
     },
     "version": "v0.0.1",
     "description": "Counting game"
