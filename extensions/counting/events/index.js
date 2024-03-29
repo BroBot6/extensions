@@ -1,4 +1,4 @@
-const data = require("../../configs/counting/data.json");
+const data = require("../configs/data.json");
 const { } = require("discord.js");
 const fs = require("fs").promises;
 
