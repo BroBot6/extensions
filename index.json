@@ -9,7 +9,7 @@
     "tags": ["@everyone", "testing"],
     "folder": "ping",
     "files": {
-      "commands": ["ping.js"]
+      "commands": ["command.js"]
     },
     "version": "v0.0.1",
     "description": "Ping command for testing."
@@ -21,7 +21,7 @@
     "icon": "",
     "lang": "en",
     "nsfw": "false",
-    "tags": ["", ""],
+    "tags": ["tool", "clear"],
     "folder": "clear",
     "files": {
       "commands": ["clear.js"]
@@ -36,13 +36,30 @@
     "icon": "",
     "lang": "en",
     "nsfw": "false",
-    "tags": ["counting"],
+    "tags": ["counting", "game"],
     "folder": "counting",
     "files": {
-      "events": ["index.js"],
+      "events": ["event.js"],
       "configs": ["data.json"]
     },
-    "version": "v0.0.1",
+    "version": "v0.0.2",
     "description": "Counting game"
+  },
+  "invlinkrole": {
+    "name": "invlinkrole",
+    "author": "wihal",
+    "author_link": "https://github.com/wihal",
+    "icon": "",
+    "lang": "en",
+    "nsfw": "false",
+    "tags": ["invite", "role"],
+    "folder": "invlinkrole",
+    "files": {
+      "commands": ["command.js"],
+      "configs": ["data.json"],
+      "events": ["event.js"]
+    },
+    "version": "v0.0.1",
+    "description": "Link a role to an invite code."
   }
 }
