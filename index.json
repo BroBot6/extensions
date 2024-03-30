@@ -7,7 +7,6 @@
     "lang": "en",
     "nsfw": "false",
     "tags": ["@everyone", "testing"],
-    "folder": "ping",
     "files": {
       "commands": ["command.js"]
     },
@@ -22,7 +21,6 @@
     "lang": "en",
     "nsfw": "false",
     "tags": ["tool", "clear"],
-    "folder": "clear",
     "files": {
       "commands": ["clear.js"]
     },
@@ -37,7 +35,6 @@
     "lang": "en",
     "nsfw": "false",
     "tags": ["counting", "game"],
-    "folder": "counting",
     "files": {
       "events": ["event.js"],
       "configs": ["data.json"]
@@ -53,7 +50,6 @@
     "lang": "en",
     "nsfw": "false",
     "tags": ["invite", "role"],
-    "folder": "invlinkrole",
     "files": {
       "commands": ["command.js"],
       "configs": ["data.json"],
