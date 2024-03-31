@@ -55,7 +55,22 @@
       "configs": ["data.json"],
       "events": ["event.js"]
     },
-    "version": "v0.0.1",
+    "version": "v0.0.2",
     "description": "Link a role to an invite code."
+  },
+  "rolesaver": {
+    "name": "rolesaver",
+    "author": "wihal",
+    "author_link": "https://github.com/wihal",
+    "icon": "",
+    "lang": "en",
+    "nsfw": "false",
+    "tags": ["role", "backup"],
+    "files": {
+      "commands": ["event.js"],
+      "configs": ["data.json", "settings.json"]
+    },
+    "version": "v0.0.1",
+    "description": "Saves roles."
   }
 }

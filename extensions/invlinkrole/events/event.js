@@ -1,17 +1,23 @@
 const fs = require("fs").promises;
 const path = require('path');
-const data = require('../configs/data.json');
 
 module.exports = {
   setup(client) {
     client.on("guildMemberAdd", async (member) => {
         console.log(`User ${member.user.tag} joined guild ${member.guild.name}`);
-        const code = member.guild.invites.cache.find(
-          (invite) => invite.uses === 0
-        ).code;
-        console.log(code);
-        if (data.invites.includes(code)) {
-          await member.roles.add(data.role);
+        
+        try {
+          // Asynchron Einladungen abrufen
+          await member.guild.fetchInvites().then(invites => {
+            const code = invites.find(invite => invite.uses === 0)?.code;
+            console.log(code);
+            
+            if (code !== undefined && data.invites.includes(code)) {
+              member.roles.add(data.role);
+            }
+          });
+        } catch (error) {
+          console.error("Fehler beim Abrufen der Einladungen:", error);
         }
     });
   },

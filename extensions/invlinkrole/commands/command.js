@@ -7,6 +7,8 @@ module.exports = {
     client.on("interactionCreate", async (interaction) => {
       if (!interaction.isCommand()) return;
 
+      if (interaction.user.bot) return;
+
       if (interaction.commandName === "linkinvite") {
         if (!interaction.member.permissions.has("ADMINISTRATOR")) return;
 
@@ -24,12 +26,8 @@ module.exports = {
             await interaction.reply("Invite code linked!");
           }
         } else {
-          // create invite and return code
 
-          const invite = await interaction.channel.createInvite({
-            maxAge: 0,
-            maxUses: 0,
-          });
+          const invite = await interaction.channel.createInvite();
 
           data[invite["code"]] = role.id;
 
@@ -37,7 +35,7 @@ module.exports = {
         }
         // save data
         fs.writeFileSync(
-          `./src/inviteRole/configs/data.json`,
+          `./src/invlinkrole/configs/data.json`,
           JSON.stringify(data, null, 2)
         );
       }

@@ -1,13 +1,13 @@
-const { } = require("discord.js");
+const {} = require("discord.js");
 
 module.exports = {
   setup(client) {
     client.on("interactionCreate", async (interaction) => {
       if (!interaction.isCommand()) return;
 
+      if (!interaction.user.bot) return;
+
       if (interaction.commandName === "ping") {
-
-
         interaction.reply("pong");
       }
     });
