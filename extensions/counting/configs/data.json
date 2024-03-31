@@ -1,12 +1,4 @@
 {
-  "settings": {
-    "CountingChannel": null,
-    "RequiredRoleID": null,
-    "fallback": false,
-    "rightEmoji": "✅",
-    "tryagainEmoji": "🔁",
-    "wrongEmoji": "❌"
-  },
   "lastAuthor": null,
   "CurrentCount": 0,
   "HighestCount": 0

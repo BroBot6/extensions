@@ -37,9 +37,9 @@
     "tags": ["counting", "game"],
     "files": {
       "events": ["event.js"],
-      "configs": ["data.json"]
+      "configs": ["data.json", "settings.json"]
     },
-    "version": "v0.0.2",
+    "version": "v0.0.3",
     "description": "Counting game"
   },
   "invlinkrole": {

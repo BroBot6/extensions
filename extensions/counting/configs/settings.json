@@ -1,0 +1,8 @@
+{
+  "CountingChannel": null,
+  "RequiredRoleID": null,
+  "fallback": true,
+  "rightEmoji": "✅",
+  "tryagainEmoji": "🔁",
+  "wrongEmoji": "❌"
+}

@@ -1,55 +1,66 @@
-const data = require("../configs/data.json");
-const { } = require("discord.js");
 const fs = require("fs").promises;
-
-const settings = data["settings"]
+const { MessageEmbed } = require("discord.js");
+const data = require("../configs/data.json");
+const settings = require("../configs/settings.json");
 
 module.exports = {
   setup(client) {
-    client.on("messageCreate", async (interaction) => {
-      if (interaction.author.bot) return;
-      if (interaction.channelId === settings["CountingChannel"]) { 
+    client.on("messageCreate", async (message) => {
+      try {
+        if (message.author.bot) return;
+        
+        const { channelId, content, member, author } = message;
+        
+        if (channelId !== settings.CountingChannel) return;
+
         if (
-          interaction.member.roles.cache.some(
-            (role) => role.id === settings["RequiredRoleID"]
-          )
+          member.roles.cache.some((role) => role.id === settings.RequiredRoleID) ||
+          settings.RequiredRoleID === null
         ) {
           if (
-            interaction.author.id === data["lastAuthor"] &&
-            !interaction.member.permissions.has("ADMINISTRATOR")
+            author.id === data.lastAuthor ||
+            !member.permissions.has("ADMINISTRATOR")
           ) {
-            await interaction.delete();
+            await message.delete();
+            await message.reply({content: "You can't play the game.", ephemeral: true});
             return;
           }
-          if (interaction.content.match(/^[0-9]+$/)) {
-            if (Number(interaction.content) === data["CurrentCount"] + 1) {
-              data["CurrentCount"] = Number(interaction.content);
-              data["lastAuthor"] = interaction.author.id;
-              await interaction.react(settings["rightEmoji"]);
+
+          const contentAsNumber = parseInt(content);
+
+          if (!isNaN(contentAsNumber)) {
+            if (contentAsNumber === data.CurrentCount + 1) {
+              data.CurrentCount = contentAsNumber;
+              data.lastAuthor = author.id;
+              await message.react(settings.rightEmoji);
             } else {
-              if (data["CurrentCount"] > data["HighestCount"]) {
-                data["HighestCount"] = data["CurrentCount"];
-              } if (!settings["fallback"]) {
-                await interaction.react(settings["tryagainEmoji"]);
-                interaction.reply({ content: 'wrong number try again', ephemeral: true });
+              if (data.CurrentCount > data.HighestCount) {
+                data.HighestCount = data.CurrentCount;
+              }
+              
+              if (!settings.fallback) {
+                await message.react(settings.tryagainEmoji);
+                await message.reply({ content: "Wrong number. Please try again.", ephemeral: true });
                 return;
               }
-              data["CurrentCount"] = 0;
-              await interaction.react(settings["wrongEmoji"]);
-              interaction.reply({ content: 'wrong number start over at 1', ephemeral: true });
+              
+              data.CurrentCount = 0;
+              await message.react(settings.wrongEmoji);
+              await message.reply({ content: "Wrong number. Starting over at 1.", ephemeral: true });
             }
           } else {
-            await interaction.reply("please only send numbers");
-            await interaction.react(settings["tryagainEmoji"]);
+            await message.reply("Please only send numbers.");
+            await message.react(settings.tryagainEmoji);
           }
         } else {
-          await interaction.reply("you are not allowed to play this game");
-          await interaction.react(settings["tryagainEmoji"]);
+          await message.reply("You are not allowed to play this game.");
+          await message.react(settings.tryagainEmoji);
         }
-        await fs.writeFile(
-          "./src/configs/counting/countingData.json",
-          JSON.stringify(data)
-        );
+        
+        await fs.writeFile("./src/counting/configs/data.json", JSON.stringify(data, null, 2));
+      } catch (error) {
+        console.error("Error counting:", error);
+        message.reply(`Error counting: ${error}`);
       }
     });
   },
